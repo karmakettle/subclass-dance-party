@@ -21,13 +21,24 @@ $(document).ready(function(){
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
     // make a dancer with a random position
+    var generateDancer=function(dancerMakerFunction){
+      var dancer = new dancerMakerFunction(
+        $("body").height() * Math.random(),
+        $("body").width() * Math.random(),
+        Math.random() * 1000
+      );
+      $('body').append(dancer.$node);
+    }
 
-    var dancer = dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
-      Math.random() * 1000
-    );
-    $('body').append(dancer.$node);
+    // if ( danceMakerFcnName === "FlashMob" ) then
+      // call generateDancer multiple times
+    if (dancerMakerFunctionName==="FlashMob"){
+      for ( var i = 0; i < 20; i++ ) {
+        generateDancer(dancerMakerFunction);
+      }
+    }else{
+      generateDancer(dancerMakerFunction)
+    }
   });
 });
 

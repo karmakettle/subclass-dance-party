@@ -25,3 +25,17 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+
+.spaz{
+  position: absolute;
+  background: url('img/spaz.png') no-repeat;
+  height: 100px;
+  width: 100px;
+}
+
+.flashmob{
+  position: absolute;
+  background: url('img/flashmob.gif') no-repeat;
+  height: 100px;
+  width: 100px;
+}
