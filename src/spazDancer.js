@@ -1,5 +1,5 @@
 var SpazDancer = function(top, left, timeBetweenSteps) {
-  Dancer.call(this, top, left, 100);
+  Dancer.call(this, top, left, 300);
   this.$node = $('<span class="spaz"></span>');
 
 };

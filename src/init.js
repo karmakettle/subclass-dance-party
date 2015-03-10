@@ -1,10 +1,26 @@
 $(document).ready(function(){
   window.dancers = [];
 
+  $(document.body).on("mouseover",".dancer", function(event){ 
+    $(this).css({
+      border: "none",
+      background: "url('img/spinning-mario.gif') no-repeat",
+      height: "150",
+      width: "150"
+    });
+  });
+
+  // loop through dancers
+    // if it's a mario
+      // check all other dancers and...
+        // if it's a spaz dancer
+          // get offset of mario and spaz
+          // if the two are close enough together, animate!
+
   $(".lineUp").on("click", function(event){
 
     var numDancers = window.dancers.length;
-    var space = $("body").height()/numDancers
+    var space = $("body").height()/numDancers;
     var top = numDancers < 2 ? 100 : space;
 
     for (var i=0; i<window.dancers.length;i++){
@@ -12,7 +28,7 @@ $(document).ready(function(){
       dancer.setPosition(top,50)
       top += space;
     }
-  })
+  });
 
   $(".addDancerButton").on("click", function(event){
     /* This function sets up the click handlers for the create-dancer
@@ -35,18 +51,17 @@ $(document).ready(function(){
 
     // make a dancer with a random position
     var generateDancer=function(dancerMakerFunction, top, left){
-      
+      top = top || $("body").height() * Math.random();
+      left = left || $("body").width() * Math.random();
       var dancer = new dancerMakerFunction(
-        $("body").height() * Math.random(),
-        $("body").width() * Math.random(),
+        top,
+        left,
         Math.random() * 1000
       );
       $('body').append(dancer.$node);
       window.dancers.push(dancer)
     }
 
-    // if ( danceMakerFcnName === "FlashMob" ) then
-      // call generateDancer multiple times
     if (dancerMakerFunctionName==="FlashMob"){
       var counter = 0;
       
@@ -59,7 +74,7 @@ $(document).ready(function(){
       }, 400);
     }
     else if ( dancerMakerFunctionName === "SexyMario" ) {
-      generateDancer(dancerMakerFunction);
+      generateDancer(dancerMakerFunction, 600, 100);
     }
     else {
       generateDancer(dancerMakerFunction)

@@ -29,13 +29,13 @@ body, a:link, a:visited, a:active{
 .spaz{
   position: absolute;
   background: url('img/spaz.png') no-repeat;
-  height: 100px;
-  width: 100px;
+  height: 189px;
+  width: 200px;
 }
 
 .flashmob{
   position: absolute;
-  background: url('img/flashmob.gif') no-repeat;
+  background: url('img/goomba.gif') no-repeat;
   height: 100px;
   width: 100px;
 }
@@ -43,6 +43,8 @@ body, a:link, a:visited, a:active{
 .mario {
   position:absolute;
   background: url('img/sexymario.gif') no-repeat;
-  height:500px;
-  width: 500px;
+  height:350px;
+  width: 366px;
+/*  border: 5px solid black;
+  border-radius: 200px;*/
 }

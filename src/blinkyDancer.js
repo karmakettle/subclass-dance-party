@@ -3,8 +3,6 @@ var BlinkyDancer = function(top, left, timeBetweenSteps){
   // so we must keep a copy of the old version of this function
   Dancer.call(this, top, left, timeBetweenSteps)
 
-  // this.step()
-
 };
 
 BlinkyDancer.prototype=Object.create(Dancer.prototype)
@@ -16,7 +14,7 @@ BlinkyDancer.prototype.step = function(){
   // See http://api.jquery.com/category/effects/ for this and
   // other effects you can use on a jQuery-wrapped html tag.
   Dancer.prototype.step.call(this);
-  this.$node.toggle()
+  // this.$node.toggle()
 
 };
 
