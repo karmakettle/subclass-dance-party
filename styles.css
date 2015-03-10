@@ -3,7 +3,7 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background: #2C9119 url("img/mario.jpg") no-repeat center center fixed;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -38,4 +38,11 @@ body, a:link, a:visited, a:active{
   background: url('img/flashmob.gif') no-repeat;
   height: 100px;
   width: 100px;
+}
+
+.mario {
+  position:absolute;
+  background: url('img/sexymario.gif') no-repeat;
+  height:500px;
+  width: 500px;
 }

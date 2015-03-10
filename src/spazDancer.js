@@ -9,13 +9,7 @@ SpazDancer.prototype.constructor=SpazDancer
 
 SpazDancer.prototype.step = function() {
 	Dancer.prototype.step.call(this);
-  // this.$node.animate({
-  // 	top: -10px,
-  // }, 2000, );
-// var styleSettings = {
-//     top: top,
-//     left: left
-//   };
+
   this.$node.css({
   	top: Math.random() * $("body").height(),
   	left: Math.random() * $("body").width()

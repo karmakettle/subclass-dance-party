@@ -13,10 +13,10 @@ describe("flashMob", function() {
     expect(flashMob.$node).to.be.an.instanceof(jQuery);
   });
 
-  it("should have a step function that makes its node blink", function() {
-    sinon.spy(flashMob.$node, 'toggle');
+  it("should have a step function that sets css properties", function() {
+    sinon.spy(flashMob.$node, 'css');
     flashMob.step();
-    expect(flashMob.$node.toggle.called).to.be.true;
+    expect(flashMob.$node.css.called).to.be.true;
   });
 
   describe("dance", function(){

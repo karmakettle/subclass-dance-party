@@ -1,6 +1,19 @@
 $(document).ready(function(){
   window.dancers = [];
 
+  $(".lineUp").on("click", function(event){
+
+    var numDancers = window.dancers.length;
+    var space = $("body").height()/numDancers
+    var top = numDancers < 2 ? 100 : space;
+
+    for (var i=0; i<window.dancers.length;i++){
+      var dancer = window.dancers[i]
+      dancer.setPosition(top,50)
+      top += space;
+    }
+  })
+
   $(".addDancerButton").on("click", function(event){
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.
@@ -21,13 +34,15 @@ $(document).ready(function(){
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
     // make a dancer with a random position
-    var generateDancer=function(dancerMakerFunction){
+    var generateDancer=function(dancerMakerFunction, top, left){
+      
       var dancer = new dancerMakerFunction(
         $("body").height() * Math.random(),
         $("body").width() * Math.random(),
         Math.random() * 1000
       );
       $('body').append(dancer.$node);
+      window.dancers.push(dancer)
     }
 
     // if ( danceMakerFcnName === "FlashMob" ) then
@@ -42,6 +57,9 @@ $(document).ready(function(){
           clearInterval(hamsterFest);
         }
       }, 400);
+    }
+    else if ( dancerMakerFunctionName === "SexyMario" ) {
+      generateDancer(dancerMakerFunction);
     }
     else {
       generateDancer(dancerMakerFunction)
