@@ -23,6 +23,8 @@ SexyMario.prototype.step = function() {
       var context = this;
       if ( distance < 250 ) {
         this.$node.css('background', 'url("img/flipmario.png") no-repeat');
+        var dead = new Audio('mario-dies.m4a');
+        dead.play();
         this.$node.animate({
           top: "-=100px"
         },
