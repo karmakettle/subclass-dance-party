@@ -33,10 +33,17 @@ $(document).ready(function(){
     // if ( danceMakerFcnName === "FlashMob" ) then
       // call generateDancer multiple times
     if (dancerMakerFunctionName==="FlashMob"){
-      for ( var i = 0; i < 20; i++ ) {
+      var counter = 0;
+      
+      var hamsterFest = setInterval(function() { 
         generateDancer(dancerMakerFunction);
-      }
-    }else{
+        counter++;
+        if ( counter === 20 ) {
+          clearInterval(hamsterFest);
+        }
+      }, 400);
+    }
+    else {
       generateDancer(dancerMakerFunction)
     }
   });

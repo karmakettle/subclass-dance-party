@@ -1,5 +1,5 @@
 var FlashMob = function(top, left, timeBetweenSteps) {
-  Dancer.call(this, top, left, 2000);
+  Dancer.call(this, top, left, 500);
   this.$node = $('<span class="flashmob"></span>');
 };
 
