@@ -15,33 +15,6 @@ SexyMario.prototype.constructor=SexyMario
 SexyMario.prototype.step = function() {
   Dancer.prototype.step.call(this);
 
-  for (var i=0; i<window.dancers.length;i++){
-    if (window.dancers[i] instanceof SpazDancer){
-      var marioOffset=this.$node.offset()
-      var spazOffset=window.dancers[i].$node.offset()
-      var distance = calculateDistance(marioOffset, spazOffset)
-      var context = this;
-      if ( distance < 250 ) {
-        this.$node.css('background', 'url("img/flipmario.png") no-repeat');
-        var dead = new Audio('mario-dies.m4a');
-        dead.play();
-        this.$node.animate({
-          top: "-=100px"
-        },
-        {
-          easing: 'swing',
-          duration: 300,
-          step: function(){ context.$node.animate({top: 5000}, 300)}
-        });
-      }
-    }
-  }
-
-  function calculateDistance(marioOffset, spazOffset) {
-    var a = (marioOffset.top+50) - spazOffset.top;
-    var b = (marioOffset.left+25) - spazOffset.left;
-    return Math.sqrt(a * a + b * b)
-  };
 
   var currentPos = this.$node.offset();
   var width = $("body").width();
