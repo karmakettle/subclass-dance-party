@@ -7,18 +7,28 @@ body{
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
-  color: lightblue;
-}
-.title, .addDancerButton{
-  padding:5px 12px;
-  float:right;
-}
-.topbar{
-  height:32px;
-  background-color: #555;
+  color: white;
+  text-decoration: none;
+  font-family: Arial;
 }
 .title{
-  background-color: #777;
+  padding:5px 12px;
+  font-size: 20px;
+}
+
+.addDancerButton{
+  padding:5px 12px;
+  border: 2px solid white;
+  border-radius:10px;
+}
+.topbar{
+  height:80px;
+  background-color: #2C9119;
+  text-align:center;
+}
+.title{
+  background-color: #2C9119;
+  height: 30px;
 }
 .dancer{
   border:10px solid red;
